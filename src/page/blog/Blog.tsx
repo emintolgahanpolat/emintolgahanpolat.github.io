@@ -2,10 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SocialMedia from '../component/SocialMedia';
 import Medium from './component/Medium';
 
-function Profile() {
+function Blog() {
     return (
         <Medium />
     );
 }
 
-export default Profile;
+export default Blog;

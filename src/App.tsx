@@ -11,7 +11,7 @@ import {
 import { useState } from 'react';
 import Home from './page/home/Home';
 import Unknown from './page/unknow/Unknow';
-import Profile from './page/profile/Profile';
+import Blog from './page/blog/Blog';
 import SocialMedia from './page/component/SocialMedia';
 
 function App() {
@@ -34,10 +34,9 @@ function App() {
             </Nav>
             <Nav>
 
-              <Nav.Link> <Link to="/">Home</Link></Nav.Link>
-              <Nav.Link>  <Link to="/profile">
-                Profile
-              </Link></Nav.Link>
+              <Nav.Link as={Link} to='/'> Home</Nav.Link>
+              <Nav.Link as={Link} to="/blog">
+                Blog</Nav.Link>
 
             </Nav>
           </Navbar.Collapse>
@@ -60,7 +59,7 @@ function App() {
 
         <Row>
           <Col sm="12" md="3"  >
-            <Row style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center' }} className='position-fixed'>
               <Container >
                 <Image width={180} height={180} roundedCircle src='https://avatars.githubusercontent.com/u/20768158?s=400&u=b32c02c6e2ca1692901df04216d46a8eae908b42&v=4'></Image>
               </Container>
@@ -68,14 +67,14 @@ function App() {
               <h5>Mobile Developer</h5>
 
               <SocialMedia />
-            </Row>
+            </div>
 
           </Col>
           <Col sm="12" md="9" >
 
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="*" element={<Unknown />} />
             </Routes>
           </Col>
