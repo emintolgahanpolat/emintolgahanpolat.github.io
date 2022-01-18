@@ -59,7 +59,7 @@ function App() {
 
         <Row>
           <Col sm="12" md="3"  >
-            <div style={{ textAlign: 'center' }} className='position-fixed'>
+            <div style={{ textAlign: 'center' }} >
               <Container >
                 <Image width={180} height={180} roundedCircle src='https://avatars.githubusercontent.com/u/20768158?s=400&u=b32c02c6e2ca1692901df04216d46a8eae908b42&v=4'></Image>
               </Container>
