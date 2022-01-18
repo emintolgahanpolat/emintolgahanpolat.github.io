@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   HashRouter as Router,
   Route,
-  Routes
+  Routes,
+  Link
 } from "react-router-dom";
 
 import { useState } from 'react';
@@ -19,7 +20,7 @@ function App() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  return (<Router>
+  return (<Router basename="/">
     <div className="App">
 
       <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark" fixed="top">
@@ -33,10 +34,11 @@ function App() {
             </Nav>
             <Nav>
 
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/profile">
+              <Nav.Link> <Link to="/">Home</Link></Nav.Link>
+              <Nav.Link>  <Link to="/profile">
                 Profile
-              </Nav.Link>
+              </Link></Nav.Link>
+
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -70,6 +72,7 @@ function App() {
 
           </Col>
           <Col sm="12" md="9" >
+
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
