@@ -2,7 +2,7 @@ import './App.css';
 import { Navbar, Container, Row, Image, Col, Nav, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes
 } from "react-router-dom";
