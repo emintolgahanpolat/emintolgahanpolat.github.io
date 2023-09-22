@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 function Home() {
 
 
-    const [error, setError] = useState(null);
+
     const [source, setSource] = useState("");
 
     useEffect(() => {
@@ -18,9 +18,7 @@ function Home() {
                 (result) =>
                     setSource(result)
 
-            ).catch((error) => {
-                setError(error);
-            })
+            );
     })
     return (
         <div className="Home container">

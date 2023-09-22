@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ListGroup, Badge } from 'react-bootstrap';
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaMedium, FaTwitter, FaDraft2Digital, FaAndroid, FaDev, FaDiscord } from 'react-icons/fa';
+import { ListGroup } from 'react-bootstrap';
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaMedium, FaTwitter, FaDev, FaDiscord } from 'react-icons/fa';
 
 function SocialMedia() {
 
