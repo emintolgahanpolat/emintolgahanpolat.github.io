@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 import { FaChevronRight } from 'react-icons/fa';
 
 function Medium() {
@@ -20,32 +20,38 @@ function Medium() {
 
     if (items.length > 0) {
         return (
-            <div>
+            <Row>
                 {
                     items.map((item: any) => (
-                        <Card className='mb-3'>
-                            <Card.Header className="d-flex justify-content-between align-items-start" >
+                        <Col md={6} xs={12}>
+                            <Card className='mb-3'>
 
-                                <h5 >{item["title"]} </h5>
-                                <Button size="sm" href={item["link"]} target="_blank" className='ms-auto' variant="light">   Oku <FaChevronRight /></Button>
+                                <Card.Header className="d-flex justify-content-between align-items-start" >
 
-                            </Card.Header>
+                                    <h5 >{item["title"]} </h5>
+                                </Card.Header>
 
-                            <Card.Body>
-                                <Card.Text>
-                                    <div dangerouslySetInnerHTML={{ __html: item["description"] }} />
-                                </Card.Text>
+                                <Card.Body>
+                                    <Card.Text>
 
-                            </Card.Body>
-                            {item["categories"].length > 0 ? <Card.Footer  >
-                                <div> {item["categories"].toString()}</div>
-                            </Card.Footer> : null
-                            }
-                        </Card>
+                                        {/*  <div dangerouslySetInnerHTML={{ __html: item["description"] }} />*/}
+
+                                        {item["categories"].length > 0 ?
+                                            <div> {item["categories"].toString()}</div>
+                                            : null
+                                        }
+                                    </Card.Text>
+
+                                    <Button size="sm" href={item["link"]} target="_blank" className='ms-auto' variant="light">   Oku <FaChevronRight /></Button>
+
+                                </Card.Body>
+
+
+                            </Card></Col>
 
                     ))
                 }
-            </div>
+            </Row>
         );
     }
 

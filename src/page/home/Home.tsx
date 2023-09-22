@@ -1,21 +1,30 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MarkdownPreview from '@uiw/react-markdown-preview';
+import { useEffect, useState } from 'react';
+
 function Home() {
+
+
+    const [error, setError] = useState(null);
+    const [source, setSource] = useState("");
+
+    useEffect(() => {
+        fetch("https://raw.githubusercontent.com/emintolgahanpolat/emintolgahanpolat/main/README.md")
+            .then(res =>
+
+                res.text()
+            )
+            .then(
+                (result) =>
+                    setSource(result)
+
+            ).catch((error) => {
+                setError(error);
+            })
+    })
     return (
         <div className="Home container">
-            <h1>"Merhaba Dünya"</h1>
-
-
-            <div> - Android Developer [Kotlin] ⭑⭑⭑⭑⭒ </div>
-            <div> - iOS Developer [Swift] ⭑⭑⭑⭑⭒ </div>
-            <div> - Flutter Developer [Dart] ⭑⭑⭑⭑⭒ </div>
-            <div> - Spring Boot [Java] ⭑⭑⭒⭒⭒ </div>
-            <div> - H2 </div>
-            <div> - MVC </div>
-            <div> - Spring Security </div>
-            <div> - Vue JS, Node JS ⭑⭑⭒⭒⭒ </div>
-            <div> - Python ⭑⭑⭒⭒⭒ </div>
-            <div> - C++ ⭑⭒⭒⭒⭒ </div>
-
+            <MarkdownPreview source={source} />
         </div >
     );
 }
