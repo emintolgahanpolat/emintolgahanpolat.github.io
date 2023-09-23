@@ -22,7 +22,7 @@ function Home() {
     })
     return (
         <div className="Home container">
-            <MarkdownPreview source={source} />
+            <MarkdownPreview source={source} wrapperElement={{ "data-color-mode": "light" }} />
         </div >
     );
 }
